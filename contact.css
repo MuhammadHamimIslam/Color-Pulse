@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@400..900&display=swap');
+:root{
+  --body-bg: #EFEFEF;
+  --body-text-color: #161616;
+  --shadow: #2B2B2B9C;
+  --card-bg: #CECECECF;
+  --card-text: #3C3C3C
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+*::selection{
+  background: var(--body-text-color);
+  color: var(--body-bg);
+}
+body{
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--body-bg);
+  color: var(--body-text-color)
+}
+.header{
+  width: 100%;
+}
+.home{
+  margin-left: 1rem;
+}
+.home-icon{
+ stroke: var(--body-text-color)
+}
+.follow-text{
+  color: #82c9ff;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+.header-section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: 'Exo', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(var(--angle), var(--color1), var(--color2), var(--color3), var(--color4));
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: BlazeText 4s ease infinite;
+  transition: background 1.5s ease;
+  text-decoration: none;
+  margin-top: 0.2rem;
+  display: inline-block;
+  user-select: none
+}
+.cont {
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 2rem;
+  fill: #A5A5B0;
+  cursor: pointer;
+  top: 0px;
+  left: -2rem;
+}
+.cont .moon {
+  position: absolute;
+  animation: keyframes-fill .5s;
+}
+.cont .sun {
+  position: absolute;
+  display: none;
+  animation: keyframes-fill .5s;
+}
+/* ------ On check event ------ */
+.cont input:checked ~ .moon {
+  display: none;
+}
+.cont input:checked ~ .sun {
+  display: block;
+}
+.cont input {
+  display: none;
+}
+.heading h1,p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.social-links{
+  width: 95%;
+  margin: 1rem auto;
+  color: #fff;
+  display: flex;
+  gap: 1.9rem;
+  flex-direction: column;
+}
+.social-links .social-card{
+  background: var(--card-bg);
+  color: var(--card-text);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 0.7rem;
+  gap: 2.6rem ;
+  transition: transform 0.4s ease-in,box-shadow 0.45s ease-in;
+  position: relative;
+}
+.social-card .pic{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.social-links .social-card:hover{
+  transform: scale(1.03);
+  box-shadow: 0 0 0 0.21rem var(--shadow);
+}
+#copyright{
+  text-align: center;
+  background-color: var(--body-bg);
+  color: var(--body-text-color);
+  box-shadow: 0 -2px 2px var(--shadow);
+}
+@keyframes BlazeText {
+  0% { 
+    --angle: 0deg;--color1: #00f5ff;--color2: #4d4dff;--color3: #ae52d4;--color4: #ff87ca;}
+  50% {
+    --angle: 180deg;--color1: #ae52d4;--color2: #00f5ff;--color3: #ff87ca;--color4: #4d4dff;}
+  100% {
+    --angle: 360deg;--color1: #ff87ca;--color2: #ae52d4;--color3: #4d4dff;--color4: #00f5ff;
+  }
+}
+@keyframes keyframes-fill {
+  0% {
+    transform: rotate(-360deg) scale(0);
+    opacity: 0;
+  }
+
+  75% {
+    transform: rotate(25deg);
+  }
+}
+body.dark-mode{
+  --body-bg: #0F0F0F;
+  --body-text-color: #F0F0F0;
+  --shadow: #E6E6E69C;
+  --card-bg: #545454CF;
+  --card-text: #E0E0E0
+
+} 

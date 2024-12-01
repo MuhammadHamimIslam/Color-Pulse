@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap');
+:root{
+  --body-bg: #E0E0E0;
+  --body-text-color: #222222;
+  --section-bg: #EEEEEE;
+  --section-text-color: #232323;
+  --shadow: #79797980;
+  --color-tagline: #00AFFF
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::selection{
+  background: var(--body-text-color);
+  color: var(--body-bg);
+}
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--body-bg);
+  color: var(--body-text-color);
+  text-transform: none;
+  font-weight: 450;
+}
+.header-section {
+  color: var(--body-text-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+main h1 {
+  font-size: 2.5rem;
+ text-shadow: 0px 0px 8px rgba(1, 147, 255, 0.7);
+ text-align: center;
+}
+.back{
+  font-size: 2rem;
+  margin-left: 0.7rem;
+}
+.home-icon{
+  stroke: var(--body-text-color)
+}
+.tagline {
+  font-size: 1.1rem;
+  color: var(--color-tagline);
+  font-weight: 300;
+  text-align: center;
+}
+.introduction, .features, .how-it-works, .future-plans {
+  padding: 1.5rem;
+  margin: 1rem 2rem;
+  background: var(--section-bg);
+  border-radius: 0.5rem;
+  border-left: 3px solid #0193FF;
+  line-height: 1.5rem;
+  color: var(--section-text-color);
+  box-shadow: 0 0 10px var(--shadow);
+  transition: scale 0.4s ease;
+  text-shadow: -1px -1px 1px var(--shadow);
+}
+main section:hover{
+  scale: 1.05
+}
+.features ul {
+  list-style-type: none;
+  padding: 0;
+}
+.features li {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+.cont {
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 2rem;
+  fill: #A5A5B0;
+  cursor: pointer;
+  top: 0px;
+  left: -2rem;
+}
+.cont .moon {
+  position: absolute;
+  animation: keyframes-fill .5s;
+}
+.cont .sun {
+  position: absolute;
+  display: none;
+  animation: keyframes-fill .5s;
+}
+/* ------ On check event ------ */
+.cont input:checked ~ .moon {
+  display: none;
+}
+.cont input:checked ~ .sun {
+  display: block;
+}
+.cont input {
+  display: none;
+}
+.features li::before {
+  content: '➤';
+  color: #82c9ff;
+  margin-right: 0.5rem;
+}
+.button, .bg-option input:checked ~ .bg-label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #0193FF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+.button:hover {
+  background-color: #2db0ff;
+}
+footer{
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  background: #A1A1A1;
+  width: 100%;
+  height: auto;
+  color: #0093FCF0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+.social{
+  width: 100%;
+}
+.pic{
+  width: 50px;
+  margin-left: 20px;
+}
+#copyright {
+  background: #E2BEBE;
+ margin-top: 15px;
+ font-size: 1rem
+}
+.follow{
+  color: #FFED00;
+  padding: 5px;
+  font-size: 1.1rem
+}
+.header-section{
+  width: 100%;
+}
+.logo {
+  font-family: 'Exo', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(var(--angle), var(--color1), var(--color2), var(--color3), var(--color4));
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: BlazeText 4s ease infinite;
+  transition: background 1.5s ease;
+  text-decoration: none;
+  margin-top: 0.2rem;
+  display: inline-block;
+  user-select: none
+}
+@keyframes BlazeText {
+  0% { 
+    --angle: 0deg;--color1: #00f5ff;--color2: #4d4dff;--color3: #ae52d4;--color4: #ff87ca;}
+  50% {
+    --angle: 180deg;--color1: #ae52d4;--color2: #00f5ff;--color3: #ff87ca;--color4: #4d4dff;}
+  100% {
+    --angle: 360deg;--color1: #ff87ca;--color2: #ae52d4;--color3: #4d4dff;--color4: #00f5ff;
+  }
+}
+@keyframes keyframes-fill {
+  0% {
+    transform: rotate(-360deg) scale(0);
+    opacity: 0;
+  }
+
+  75% {
+    transform: rotate(25deg);
+  }
+}
+
+/*dark mode */
+body.dark-mode{
+  --body-bg: #080808;
+  --body-text-color: #E0E0E0;
+--section-bg: rgba(255, 255, 255, 0.03);
+  --section-text-color: #EEEEEE;
+ --shadow: #D5D5D594 ;
+ --color-tagline: #82c9ff
+}
