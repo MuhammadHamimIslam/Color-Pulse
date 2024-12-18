@@ -43,7 +43,7 @@ background: #008EFF;
 width: auto;
 }
 .tab-container button{
-  background: #008EFF;
+  background: #0072ce;
   color: #fff;
   border: 1px solid #008EFF;
   transition: all 0.4s linear;
@@ -181,7 +181,7 @@ box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   display: flex;
 }
 button.active-btn{
-   color: #008EFF;
+   color: #0072ce;
   background-color: #fff
 }
 .header{
@@ -330,10 +330,9 @@ footer{
   position: relative;
   bottom: 0;
   text-align: center;
-  background: #A1A1A1;
+  background: #676767;
   width: 100%;
   height: auto;
-  color: #0093FCF0;
 }
 .social{
   width: 100%;
@@ -345,7 +344,8 @@ footer{
 #copyright {
   background: #E2BEBE;
  margin-top: 15px;
- font-size: 1rem
+ font-size: 1rem;
+ color: #035189;
 }
 .follow{
   color: #FFED00;
